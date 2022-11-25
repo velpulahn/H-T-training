@@ -1,0 +1,13 @@
+package com.hco;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HcoUserServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HcoUserServiceApplication.class, args);
+	}
+
+}

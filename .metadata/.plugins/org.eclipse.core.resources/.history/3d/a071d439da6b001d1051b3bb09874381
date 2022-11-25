@@ -1,0 +1,9 @@
+package com.hco.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hco.entity.Users;
+
+public interface HCOUsersRepository extends JpaRepository<Users, Integer> {
+
+}

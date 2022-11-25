@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.digitalbooks&apos; to &apos;com.hco&apos;&#x0D;&#x0A;- Original project: &apos;EurekaServer&apos;&#x0D;&#x0A;- Original element: &apos;EurekaServer/src/main/java/com.digitalbooks&apos;&#x0D;&#x0A;- Renamed element: &apos;EurekaServer/src/main/java/com.hco&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.digitalbooks&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.digitalbooks" name="com.hco" qualified="false" references="true" stamp="1669311516548" textual="false" version="1.0"/>
+</session>

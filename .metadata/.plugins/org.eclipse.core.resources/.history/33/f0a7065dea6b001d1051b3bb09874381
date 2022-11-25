@@ -1,0 +1,51 @@
+package com.hco.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hco.entity.HCOUser;
+import com.hco.entity.Users;
+import com.hco.exception.HCOUserException;
+import com.hco.repo.HCOUserRepository;
+import com.hco.repo.UsersRepository;
+
+@Service
+public class HCOUserService {
+
+	 @Autowired 
+	 private HCOUserRepository repo;
+	 
+	 @Autowired 
+	 private UsersRepository usersRepo;
+	 
+	 public HCOUser saveUserDetails(int userId, HCOUser hcoUser){
+	        return repo.save(hcoUser);
+	 }
+
+	public HCOUser updateHCOUserDetails(int userId, HCOUser hcoUser) throws HCOUserException {
+		// TODO Auto-generated method stub
+		if(repo.existsById(hcoUser.getHcoId())) {
+			hcoUser.setOrganizationName(hcoUser.getOrganizationName());
+			hcoUser.setAddress(hcoUser.getAddress());
+			hcoUser.setCountry(hcoUser.getCountry());
+			hcoUser.setState(hcoUser.getState());
+			hcoUser.setCity(hcoUser.getCity());
+			hcoUser.setZipcode(hcoUser.getZipcode());
+			hcoUser.setEmail(hcoUser.getEmail());
+			hcoUser.setWebsite(hcoUser.getWebsite());
+			hcoUser.setPrimaryContact(hcoUser.getPrimaryContact());
+			hcoUser.setPrimaryContactMobile(hcoUser.getPrimaryContactMobile());
+			hcoUser.setSecondaryContact(hcoUser.getSecondaryContact());
+			hcoUser.setSecondaryContactMobile(hcoUser.getSecondaryContactMobile());
+			hcoUser.setPrograms(hcoUser.getPrograms());
+
+    	System.out.println("Object of hcoUser :" + hcoUser);
+		return repo.save(hcoUser);
+    	} else {
+    		throw new HCOUserException("HCO User details not updated with this id: "+ "HCO ID : " + hcoUser.getHcoId());
+    	}
+	}
+
+}

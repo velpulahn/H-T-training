@@ -1,0 +1,19 @@
+package com.hco.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "HCOUserLogin")
+public class HCOUserLogin {
+	   @Id
+	   @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int hcoId;
+	 	private String userName;
+	    private String password;
+	    private String role;
+	
+}

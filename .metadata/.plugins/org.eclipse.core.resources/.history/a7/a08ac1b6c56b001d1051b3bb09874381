@@ -1,0 +1,5 @@
+package com.hco.repo;
+
+public class HCOUserRepository {
+
+}

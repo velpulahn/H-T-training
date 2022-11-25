@@ -1,0 +1,22 @@
+package com.hco;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+
+@SpringBootApplication
+@OpenAPIDefinition(
+//		info = @Info(
+//				title = "Books",
+//				version = "1.1",
+//				description = "This service is used in the digital books application"
+//			)
+		)
+public class UserServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserServiceApplication.class, args);
+	}
+
+}

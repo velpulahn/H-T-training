@@ -1,0 +1,14 @@
+package com.hco.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.hco.entity.HCOUser;
+import com.hco.model.Users;
+
+public interface HCOUserRepository extends JpaRepository<HCOUser, Integer>{
+
+	@Query("SELECT role FROM Users role WHERE role.user_id= (:userId)")
+	Users getRoleByUserId(int userId);
+
+}

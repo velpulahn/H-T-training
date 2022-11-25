@@ -1,0 +1,162 @@
+package com.hco.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "HCOUsers")
+public class HCOUser {
+
+	 	@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int hcoId;
+	 	private int userId;
+	 	private String organizationName;
+	    private String address;
+	    private String country;
+	    private String state;
+	    private String city;
+	    private String zipcode;
+	    private String email;
+	    private String website;
+	    private String primaryContact;
+	    private String primaryContactMobile;
+	    private String secondaryContact;
+	    private String secondaryContactMobile;
+	    private String programs;
+	    
+		public HCOUser() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+		
+		public HCOUser(int hcoId, int userId, String organizationName, String address, String country, String state, String city,
+				String zipcode, String email, String website, String primaryContact, String primaryContactMobile,
+				String secondaryContact, String secondaryContactMobile, String programs) {
+			super();
+			this.hcoId = hcoId;
+			this.userId = userId;
+			this.organizationName = organizationName;
+			this.address = address;
+			this.country = country;
+			this.state = state;
+			this.city = city;
+			this.zipcode = zipcode;
+			this.email = email;
+			this.website = website;
+			this.primaryContact = primaryContact;
+			this.primaryContactMobile = primaryContactMobile;
+			this.secondaryContact = secondaryContact;
+			this.secondaryContactMobile = secondaryContactMobile;
+			this.programs = programs;
+		}
+		
+		public int getHcoId() {
+			return hcoId;
+		}
+		public void setHcoId(int hcoId) {
+			this.hcoId = hcoId;
+		}
+		public int getUser() {
+			return userId;
+		}
+		public void setUser(int userId) {
+			this.userId = userId;
+		}
+		public String getOrganizationName() {
+			return organizationName;
+		}
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
+		}
+		public String getAddress() {
+			return address;
+		}
+		public void setAddress(String address) {
+			this.address = address;
+		}
+		public String getCountry() {
+			return country;
+		}
+		public void setCountry(String country) {
+			this.country = country;
+		}
+		public String getState() {
+			return state;
+		}
+		public void setState(String state) {
+			this.state = state;
+		}
+		public String getCity() {
+			return city;
+		}
+		public void setCity(String city) {
+			this.city = city;
+		}
+		public String getZipcode() {
+			return zipcode;
+		}
+		public void setZipcode(String zipcode) {
+			this.zipcode = zipcode;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public String getWebsite() {
+			return website;
+		}
+		public void setWebsite(String website) {
+			this.website = website;
+		}
+		public String getPrimaryContact() {
+			return primaryContact;
+		}
+		public void setPrimaryContact(String primaryContact) {
+			this.primaryContact = primaryContact;
+		}
+		public String getPrimaryContactMobile() {
+			return primaryContactMobile;
+		}
+		public void setPrimaryContactMobile(String primaryContactMobile) {
+			this.primaryContactMobile = primaryContactMobile;
+		}
+		public String getSecondaryContact() {
+			return secondaryContact;
+		}
+		public void setSecondaryContact(String secondaryContact) {
+			this.secondaryContact = secondaryContact;
+		}
+		public String getSecondaryContactMobile() {
+			return secondaryContactMobile;
+		}
+		public void setSecondaryContactMobile(String secondaryContactMobile) {
+			this.secondaryContactMobile = secondaryContactMobile;
+		}
+		public String getPrograms() {
+			return programs;
+		}
+		public void setPrograms(String programs) {
+			this.programs = programs;
+		}
+		
+		@Override
+		public String toString() {
+			return "HCOUser [hcoId=" + hcoId + ", userId=" + userId + ", organizationName=" + organizationName + ", address=" + address
+					+ ", country=" + country + ", state=" + state + ", city=" + city + ", zipcode=" + zipcode
+					+ ", email=" + email + ", website=" + website + ", primaryContact=" + primaryContact
+					+ ", primaryContactMobile=" + primaryContactMobile + ", secondaryContact=" + secondaryContact
+					+ ", secondaryContactMobile=" + secondaryContactMobile + ", programs=" + programs + "]";
+		}
+	    
+	    
+}

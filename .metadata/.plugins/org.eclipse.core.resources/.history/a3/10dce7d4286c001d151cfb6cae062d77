@@ -1,0 +1,5 @@
+package com.hco.controller;
+
+public interface HCOUserClientService {
+
+}
