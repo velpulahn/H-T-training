@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span>Health Care Organization</span>
+    <span class="spacer"></span>
+    <a *ngIf="!loggedIn" mat-icon-button routerLink="/login"> Login </a>
+    <a *ngIf="loggedIn" class = "gap" mat-icon-button> {{user}} </a>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-icon-button> Logout </a>
+
+</mat-toolbar>
+
