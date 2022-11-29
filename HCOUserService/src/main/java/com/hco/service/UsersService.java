@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.hco.entity.Response;
 import com.hco.entity.Users;
 import com.hco.exception.UserException;
 import com.hco.repo.UsersRepository;
@@ -36,6 +38,18 @@ public class UsersService implements UserDetailsService {
 		return repo.findAll();
 		}
 	
+	public  Response getRoleByUserName(String userName) {
+		Response response = new Response();
+		String optional = repo.findRoleByUserName(userName);
+		if(optional == null) {
+			 response.setStatusMessage("User not found with this userName : "+userName);
+			 return response;
+		} else {
+			 response.setStatusMessage(optional);
+			 return response;
+		}	
+	}
+	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Users user =  repo.findByUserName(username);
 		String pwd=user.getPassword();
@@ -54,4 +68,11 @@ public class UsersService implements UserDetailsService {
 			throw new UsernameNotFoundException("User not present"); 
 		}
 		}
+
+	public Users getUserIdByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return repo.findByUserName(userName);
+	}
+	
+		
 }

@@ -64,23 +64,17 @@ public class HCOUserService {
     	}
 	}
 
+
 	public List<HCOUser> getAllHcoUserDetails(int userId) throws UserException{
 		if(userRepo.existsById(userId)) {
-			Users userRole = userRepo.getRoleByUserId(userId);
-			String role = userRole.getRole();
-			String user = "Account Executive";
-			if(role.equals(user)) {
-				return repo.findAll();
-			} else {
-	    		throw new UserException("This User Id not having access to see HCO User Details: "+ "User ID : " + userId);
-			}
+
+		return repo.findAll();
 		}
 		else {
     		throw new UserException("This User Id not found: "+ "User ID : " + userId);
     	}
-		// TODO Auto-generated method stub
 	}
-
+	
 	public HCOUser delete(int hcoId) throws HCOUserException{
 		Optional<HCOUser> optional= repo.findById(hcoId);
     	if(optional.isEmpty()) {
