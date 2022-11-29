@@ -4073,6 +4073,7 @@ org.eclipse.core.runtime.CoreException: Launch configuration UserServiceApplicat
 2022-11-25 17:25:26,929 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-25 17:25:26,929 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\cogjava3244\eclipseWorkspace\HealthCareOrganization\HCOUserService\src\test\resources
 2022-11-28 10:06:26,740 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+<<<<<<< HEAD
 2022-11-28 15:55:30,634 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-11-28 15:55:30,636 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-28 15:55:30,642 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
@@ -5440,3 +5441,5 @@ org.eclipse.core.runtime.CoreException: Launch configuration UserServiceApplicat
 2022-11-29 16:43:41,280 [Worker-162: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-11-29 16:43:41,280 [Worker-162: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-29 16:43:41,280 [Worker-162: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\cogjava3244\eclipseWorkspace\HealthCareOrganization\HCOUserService\src\test\resources
+=======
+>>>>>>> 197e84b33700d209e811001987e78ab401c877e7

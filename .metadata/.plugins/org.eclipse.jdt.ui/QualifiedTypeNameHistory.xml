@@ -57,7 +57,10 @@
     <fullyQualifiedTypeName name="org.springframework.security.authentication.BadCredentialsException"/>
     <fullyQualifiedTypeName name="org.springframework.security.authentication.AuthenticationManager"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="com.hco.entity.Response"/>
+=======
+>>>>>>> 197e84b33700d209e811001987e78ab401c877e7
 </qualifiedTypeNameHistroy>
