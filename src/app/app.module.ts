@@ -12,12 +12,19 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LoginService } from "./services/login.service";
 import { AuthGuard } from './services/auth.guard';
 import { AuthInterceptor } from './services/auth.interceptor';
-import { AccountExecutiveComponent } from './account-executive/account-executive.component';
+import { AccountExecutiveComponent } from './components/account-executive/account-executive.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
+import {TabModule} from 'angular-tabs-component';
+import {MatCardModule} from '@angular/material/card';
+import { UpdateComponent } from './update/update.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
 
 
 @NgModule({
@@ -27,7 +34,10 @@ import { AccountExecutiveComponent } from './account-executive/account-executive
     HomeComponent,
     LoginComponent,
     HcoUserComponent,
-    AccountExecutiveComponent
+    AccountExecutiveComponent,
+    UpdateComponent,
+    RegisterComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,13 @@ import { AccountExecutiveComponent } from './account-executive/account-executive
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatTabsModule,
+    TabModule,
+    MatCardModule,
+    ReactiveFormsModule
+    //MatDialog
   ],
   providers: [LoginService, AuthGuard, 
     [{provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}]],

@@ -1,5 +1,176 @@
-<div class="bootstrap-wrapper">
-    <div class="container text-center mt">
-        <h1> welcome to register !! </h1>
-    </div>
-</div>
+<h2 class="text-center" style="background-color: rgba(76, 74, 190, 0.635);">HCO User Registration Form and Update Form</h2>
+<tabs style="background-color: rgba(76, 74, 190, 0.635);">
+    <form (ngSubmit)="onRegister(register)" #register="ngForm">
+        <tab tabTitle="User Registration Form" class="text-center" style="padding-left: 35%; width: 70%;">
+<div class="text-center">
+            <table class="text-center" style="background-color: rgba(13, 10, 143, 0.635);">
+               <tr class="form-group">
+                <td style="color:white">User ID</td>
+                <td><input type="number" name="userId" id="userId" #userId="ngModel"
+                        [(ngModel)]="this.user.userId" required placeholder="Specify" appCheckNumericValue
+                       style="background-color:#DCDCDC;">
+                    &nbsp;
+                </td>
+              </tr> 
+                <tr *ngIf="userId.errors?.numericValueCheck && (userId.dirty || userId.touched)"
+                class="alert alert-danger" style="color:#680202;">Only numbers allowed</tr>
+                <!-- <td [hidden]="userId.valid || userId.pristine" class="alert alert-danger"
+                    style="color:#680202;">Only numbers allowed</td> -->
+           
+                <tr class="form-group">
+                    <td style="color:white">Organization Name</td>
+                    <td><input type="text" name="organizationName" id="organizationName" #organizationName="ngModel"
+                            [(ngModel)]="user.organizationName" required pattern="[A-Za-z]{3,15}"
+                            placeholder="Enter Organization Name" style="background-color:#DCDCDC;">
+                        &nbsp;
+                    </td>
+                  </tr>
+                    <tr [hidden]="organizationName.valid || organizationName.pristine" class="alert alert-danger"
+                        style="color:#680202;">*Only Alphabets allowed min 3 and max 15</tr>
+                
+                <tr class="form-group">
+                    <td style="color:white">Address</td>
+                    <td><input id="address" type="text" name="address" #address="ngModel" [(ngModel)]="user.address"
+                            placeholder="Enter Your Address" style="background-color:#DCDCDC; height:60px" required>
+                    </td>
+                  </tr>
+                    <tr [hidden]="address.valid || address.pristine" class="alert alert-danger" style="color:#680202;">
+                        *Alphabets,numbers,characters are allowed</tr>
+               
+                <tr class="form-group">
+                  <td style="color:white">Country</td>
+                  <td><input id="country" type="text" name="country" #country="ngModel" [(ngModel)]="user.country"
+                          placeholder="Enter Your Country" style="background-color:#DCDCDC; height:60px" required pattern="[A-Za-z]{3,20}">
+                  </td>
+                </tr>
+                  <tr [hidden]="country.valid || country.pristine" class="alert alert-danger" style="color:#680202;">
+                    *Only Alphabets allowed min 3 and max 20</tr>
+             
+              <tr class="form-group">
+                <td style="color:white">State</td>
+                <td><input id="state" type="text" name="state" #state="ngModel" [(ngModel)]="user.state"
+                        placeholder="Enter Your State" style="background-color:#DCDCDC; height:60px" required pattern="[A-Za-z]{3,20}">
+                </td>
+              </tr>
+                <tr [hidden]="state.valid || state.pristine" class="alert alert-danger" style="color:#680202;">
+                  *Only Alphabets allowed min 3 and max 20</tr>
+            
+            <tr class="form-group">
+              <td style="color:white">City</td>
+              <td><input id="city" type="text" name="city" #city="ngModel" [(ngModel)]="user.city"
+                      placeholder="Enter Your City" style="background-color:#DCDCDC; height:60px" required pattern="[A-Za-z]{3,20}">
+              </td>
+            </tr>
+              <tr [hidden]="city.valid || city.pristine" class="alert alert-danger" style="color:#680202;">
+                *Only Alphabets allowed min 3 and max 20</tr>
+              <tr class="form-group">
+                <td style="color:white">Zipcode</td>
+              <td><input type="text" name="zipcode" id="zipcode" #zipcode="ngModel" [(ngModel)]="user.zipcode" required
+                  pattern="[2345678][0-9]{5}" placeholder="Enter zipcode" style="background-color:#DCDCDC;">
+              </td></tr>
+              <tr [hidden]="zipcode.valid || zipcode.pristine" class= "alert alert-danger" style="color:#680202;">
+                *Only Numbers allowed exactly 6</tr> 
+            <tr class="form-group">
+                <td style="color:white">Email</td>
+                <td><input type="text" name="email" id="email" #email="ngModel" [(ngModel)]="user.email"
+                    placeholder="Email Format (Eg: abc12@xyz.com)" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    style="background-color:#DCDCDC;">
+                </td></tr>
+                <tr [hidden]="email.valid || email.pristine" class= "alert alert-danger" style="color:#680202;">
+                  *Alphabets,numbers,characters allowed</tr>
+                                <!-- "/^(?:(http(s)?)?(sftp)?(ftp)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/" -->
+
+              <tr class="form-group">
+                <td style="color:white">Website</td>
+                <td><input type="text" name="website" id="website" #website="ngModel" [(ngModel)]="user.website" 
+                  required pattern="[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}(.[a-z]{2,4})?\b(/[-a-zA-Z0-9@:%_+.~#?&//=]*)?"
+                    placeholder="https://www.abc.io" style="background-color:#DCDCDC;">
+                </td></tr>
+                <tr [hidden]="website.valid || website.pristine" class= "alert alert-danger" style="color:#680202;">
+                  *Please Match the requested format</tr>
+            <tr class="form-group">
+                <td style="color:white">Primary Contact</td>
+                <td><input type="text" name="primaryContact" id="primaryContact" #primaryContact="ngModel" [(ngModel)]="user.primaryContact" required
+                    pattern="[A-Za-z]{3,8}" placeholder="Enter Primary Contact" style="background-color:#DCDCDC;">
+                </td></tr>
+                <tr [hidden]="primaryContact.valid || primaryContact.pristine" class= "alert alert-danger" style="color:#680202;">
+                  *Only Alphabets allowed min 3 and max 8</tr>
+              
+            <tr class="form-group">
+              <td style="color:white">Primary Contact Mobile No</td>
+              <td><input type="text" name="primaryContactMobile" id="primaryContactMobile" #primaryContactMobile="ngModel" [(ngModel)]="user.primaryContactMobile" required
+                  pattern="[6789][0-9]{9}" placeholder="Enter mobile no" style="background-color:#DCDCDC;">
+              </td></tr>
+              <tr [hidden]="primaryContactMobile.valid || primaryContactMobile.pristine" class= "alert alert-danger" style="color:#680202;">
+                *Only 10 Digits allowed</tr>
+            <tr class="form-group">
+              <td style="color:white">Secondary Contact</td>
+              <td><input type="text" name="secondaryContact" id="secondaryContact" #secondaryContact="ngModel" [(ngModel)]="user.secondaryContact" required pattern="[A-Za-z]{3,8}"
+                  placeholder="Enter Secondary Contact" style="background-color:#DCDCDC;">
+              </td></tr>
+              <tr [hidden]="secondaryContact.valid || secondaryContact.pristine" class= "alert alert-danger" style="color:#680202;">
+                *Only Alphabets allowed min 3 and max 8</tr>
+            <tr class="form-group">
+               <td style="color:white">Secondary Contact Mobile No</td>
+              <td><input type="text" name="secondaryContactMobile" id="secondaryContactMobile" #secondaryContactMobile="ngModel" [(ngModel)]="user.secondaryContactMobile"
+                  placeholder="Enter Secondary Contact Mobile" required pattern="[6789][0-9]{9}" style="background-color:#DCDCDC;">
+              </td></tr>
+              <tr [hidden]="secondaryContactMobile.valid || secondaryContactMobile.pristine" class= "alert alert-danger" style="color:#680202;">
+                *Only 10 Digits allowed</tr>
+            <tr class="form-group">
+                <td style="color:white">Programs</td>
+               <td><input type="text" name="programs" id="programs" #programs="ngModel" [(ngModel)]="user.programs"
+                   placeholder="Enter Programs" required pattern="[A-Za-z]{3,20}" style="background-color:#DCDCDC;">
+               </td></tr>
+               <tr [hidden]="programs.valid || programs.pristine" class= "alert alert-danger" style="color:#680202;">
+                *Only Alphabets allowed min 5 and max 20</tr>
+             <tr class="form-group">
+              <td style="color:white">Status</td>
+             <td><input type="textarea" name="status" id="status" #status="ngModel" [(ngModel)]="user.status"
+                value="Requested" required pattern="[A-Za-z]{6,10}" style="background-color:#DCDCDC;">
+             </td></tr>
+             <tr [hidden]="status.valid || status.pristine" class= "alert alert-danger" style="color:#680202;">
+              *Only Alphabets allowed min 6 and max 10</tr>
+                <tr>
+                    <td text-center>
+                        <button type="register" [disabled]="!register.valid" class="btn btn-info">Register</button>
+                    </td>
+                </tr>
+            </table>
+          </div>
+
+        </tab>
+    </form>
+    <tab tabTitle="View Form" style="padding-left: 40%; width: 50%;">
+      <body>
+        <button type="submit" mat-raised-button color="primary" text-center (click)="getDetails(this.user.userId)">Get Details</button>
+        <table *ngIf="userDetails.length>0">
+         <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+          </mat-card-header>
+          <img class="example-card center" style="max-width: 400px; max-height: 200px;" mat-card-image src="../../assets/image2.png" alt="">
+          <mat-card-content>
+               <thead>
+               <tr>
+                <th>HCO ID</th>
+                <th>User ID</th>
+                <th>Organization Name</th>
+                <th>Programs</th>
+                <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of userDetails">
+                  <td>{{user.hcoId}}</td>
+                  <td>{{user.userId}}</td>
+                  <td>{{user.organizationName}}</td>
+                  <td>{{user.programs}}</td> 
+                  <td>{{user.status}}</td> 
+                  <td><a routerLink="/edit/{{user.hcoId}}"><i class="fa fa-edit"></i></a></td>
+          </mat-card-content>
+        </mat-card>
+      </table>
+    </body>   
+    </tab>
+</tabs>

@@ -1,0 +1,148 @@
+<h2 class="text-center" style="background-color: rgba(76, 74, 190, 0.635);">Update Form</h2>
+ <body>
+    <div class="container">
+      <form [formGroup]="updateForm" id='survey-form' (ngSubmit)="updateDetails(hcoUser)">
+        <div class='form-group row'>
+          <div class='column'>
+            <label id='hcoId-label' for="hcoId">HCO Id</label>
+            <input type="number" [(ngModel)]="this.hcoUser.hcoId" name="hcoId" id="hcoId" formControlName="hcoId"
+              placeholder="Enter HCO ID" required><br>
+            <span class="text-danger" style="color: crimson;"
+              *ngIf="updateForm.controls['hcoId'].dirty && updateForm.hasError('required','hcoId')">*HCO ID is
+              Required</span>
+          </div>
+          <div class='column'>
+            <label id='userId-label' for="userId">User Id</label>
+            <input type="number" [(ngModel)]="hcoUser.userId" id="userId" formControlName="userId"
+              class="form-control" placeholder='Enter your User Id' name="userId" required /><br>
+            <span class="text-danger" style="color: crimson;"
+              *ngIf="updateForm.controls['userId'].dirty && updateForm.hasError('required','userId')">*User ID is
+              Required</span>
+        </div>
+      </div>
+        <div class="form-group row">
+          <div class='column'>
+          <label id='organizationName-label' for="organizationName">Organization Name</label>
+          <input type="text" [(ngModel)]="hcoUser.organizationName" name="organizationName" formControlName="organizationName" class="form-control"
+            id="organizationName" pattern="[A-Za-z]{3,15}" placeholder="Enter Organization Name" name="organizationName" required><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['organizationName'].dirty && updateForm.hasError('required','organizationName')">*Only Alphabets allowed min 3 and max 15</span>
+        </div>
+        <div class='column'>
+          <label id='address-label' for="address">Address</label>
+          <input type='text' [(ngModel)]="hcoUser.address" id='address' formControlName="address"
+            class="form-control" placeholder='Enter your Address' name="address" required /><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['address'].dirty && updateForm.hasError('required','address')">
+            *Alphabets,numbers,characters are allowed</span>
+        </div>
+        </div>
+        <div class="form-group row">
+          <div class='column'>
+          <label id='country-label' for="country">Country</label>
+          <input type='text' [(ngModel)]="hcoUser.country" id='country' formControlName="country"
+            class="form-control" placeholder='Enter your Country' name="country" required pattern="[A-Za-z]{3,20}"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['country'].dirty && updateForm.hasError('required','country')">*Only Alphabets allowed min 3 and max 20</span>
+        </div>
+        <div class='column'>
+         <label id='state-label' for="price">State</label>
+          <input type='text' [(ngModel)]="hcoUser.state" id='state' formControlName="state"
+            placeholder='Enter your State' class="form-control" name="state" required pattern="[A-Za-z]{3,20}"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['state'].dirty && updateForm.hasError('required','state')">*Only Alphabets allowed min 3 and max 20</span>
+        </div>
+        </div>
+        <div class='form-group row'>
+          <div class='column'>
+          <label id='city-label' for="city">City</label>
+          <input type='text' [(ngModel)]="hcoUser.city" id='city'
+            formControlName="city" placeholder='Enter your City' class="form-control" name="city"
+            required pattern="[A-Za-z]{3,20}"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['city'].dirty && updateForm.hasError('required','city')">
+            *Only Alphabets allowed min 3 and max 20</span>
+        </div>
+        <div class='column'>
+          <label id='zipcode-label' for="zipcode">Zipcode</label>
+          <input type='text' [(ngModel)]="hcoUser.zipcode" id='zipcode' formControlName="zipcode"
+            placeholder='Enter your Zipcode' class="form-control" name="zipcode" required pattern="[2345678][0-9]{5}"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['zipcode'].dirty && updateForm.hasError('required','zipcode')">*Only Numbers allowed exactly 6</span>
+        </div>
+        </div>
+        <div class='form-group- row'>
+          <div class='column'>
+          <label id='email-label' for="email">Email</label>
+          <input type='text' [(ngModel)]="hcoUser.email" id='email' formControlName="email"
+            placeholder='Give your Email' class="form-control" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['email'].dirty && updateForm.hasError('required','email')">
+            *Alphabets,numbers,characters allowed</span>
+        </div>
+        <div class='column'>
+          <label id='website-label' for="website">Website</label>
+          <input type='text' [(ngModel)]="hcoUser.website" id='website' formControlName="website"
+            placeholder='Enter Website' class="form-control" name="website" required pattern="[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}(.[a-z]{2,4})?\b(/[-a-zA-Z0-9@:%_+.~#?&//=]*)?" /><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['website'].dirty && updateForm.hasError('required','website')">* *Please Match the requested format</span>
+        </div>
+        </div>
+        <div class='form-group row'>
+          <div class='column'>
+          <label id='primaryContact-label' for="primaryContact">Primary Contact</label>
+          <input type='text' [(ngModel)]="hcoUser.primaryContact" id='primaryContact' formControlName="primaryContact"
+          pattern="[A-Za-z]{3,15}" placeholder='Enter your Primary Contact' class="form-control" name="primaryContact" required pattern="[A-Za-z]{3,8}"/><br>
+          <span class="text-danger" style="color: crimson;"
+            *ngIf="updateForm.controls['primaryContact'].dirty && updateForm.hasError('required','primaryContact')">
+            *Only Alphabets allowed min 3 and max 8</span>
+        </div>
+        <div class='column'>
+          <label id='primaryContactMobile-label' for="primaryContactMobile">Primary Contact Mobile No</label>
+            <input type='text' [(ngModel)]="hcoUser.primaryContactMobile" id='primaryContactMobile' formControlName="primaryContactMobile"
+              placeholder='Enter your Primary Contact Mobile' class="form-control" name="primaryContactMobile" required pattern="[6789][0-9]{9}"/><br>
+            <span class="text-danger" style="color: crimson;"
+              *ngIf="updateForm.controls['primaryContactMobile'].dirty && updateForm.hasError('required','primaryContactMobile')">
+              *Only 10 Digits allowed</span>
+          </div>
+          </div>
+          <div class='form-group row'>
+            <div class='column'>
+            <label id='secondaryContact-label' for="secondaryContact">Secondary Contact</label>
+            <input type='text' [(ngModel)]="hcoUser.secondaryContact" id='secondaryContact' formControlName="secondaryContact"
+              placeholder='Enter your Secondary Contact' class="form-control" name="secondaryContact" required pattern="[A-Za-z]{3,8}"/><br>
+            <span class="text-danger" style="color: crimson;"
+              *ngIf="updateForm.controls['secondaryContact'].dirty && updateForm.hasError('required','secondaryContact')">
+              *Only Alphabets allowed min 3 and max 8</span>
+          </div>
+          <div class='column'>
+            <label id='secondaryContactMobile-label' for="secondaryContactMobile">Secondary Contact Mobile No</label>
+              <input type='text' [(ngModel)]="hcoUser.secondaryContactMobile" id='secondaryContactMobile' formControlName="secondaryContactMobile"
+                placeholder='Enter your Secondary Contact Mobile' class="form-control" name="secondaryContactMobile" required pattern="[6789][0-9]{9}"/><br>
+              <span class="text-danger" style="color: crimson;"
+                *ngIf="updateForm.controls['secondaryContactMobile'].dirty && updateForm.hasError('required','secondaryContactMobile')">*Only 10 Digits allowed</span>
+            </div>
+            </div>
+            <div class='form-group row'>
+              <div class='column'>
+                <label id='programs-label' for="programs">Programs</label>
+                <input type='text' [(ngModel)]="hcoUser.programs" id='programs' formControlName="programs"
+                  placeholder='Enter your Program' class="form-control" name="programs" required /><br>
+                <span class="text-danger" style="color: crimson;"
+                  *ngIf="updateForm.controls['programs'].dirty && updateForm.hasError('required','programs')">*Only Alphabets allowed min 5 and max 20</span>
+              </div>
+            </div>
+            <div class='form-group row'>
+              <div class='column'>
+                <label id='status-label' for="programs">Status</label>
+                <input type='text' [(ngModel)]="hcoUser.status" id='status' formControlName="status"
+                  placeholder='Enter your Status' class="form-control" name="status" required pattern="[A-Za-z]{6,10}"/><br>
+                <span class="text-danger" style="color: crimson;"
+                  *ngIf="updateForm.controls['status'].dirty && updateForm.hasError('required','status')">*Only Alphabets allowed min 6 and max 10</span>
+              </div>
+            </div>
+        <button type="submit" [disabled]="!updateForm.valid" class ="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body> 
+

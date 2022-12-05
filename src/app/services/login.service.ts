@@ -47,4 +47,8 @@ export class LoginService {
     localStorage.removeItem('username');
     return true;
   }
+  saveUser(user:any){
+    console.log(`${this.baseUrl}`+JSON.stringify(user));
+    return this.http.post<any>(`${this.baseUrl}`, user);
+  }
 }

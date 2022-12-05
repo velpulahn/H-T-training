@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ credentials={
   username:'',
   password:''
 }
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService, private userService:UserService) { }
 
   ngOnInit(): void {
   }
@@ -23,16 +24,15 @@ credentials={
     console.log(this.credentials);
     this.loginService.authenticate(this.credentials).subscribe(
       (res:any)=>{
-        console.log(res);
-        console.log(res.token);
-        console.log(this.credentials.username);
         this.loginService.loginUser(res.token, this.credentials.username);
         this.loginService.getRoleByUserName(this.credentials.username).subscribe(
         (res:any)=>{        
           if(res.statusMessage == "HCO User"){
+            alert("HCO User logged in Successfully !")
             window.location.href="/hcoUser";
           } else if(res.statusMessage == "Account Executive") {
-            window.location.href="/ae";
+            alert("Account Executive logged in Successfully !")
+            window.location.href="/viewhcos";
           } 
         },
         err=>{
@@ -41,9 +41,8 @@ credentials={
         )
       }, 
       err=>{
-        alert("InValid Credentials");    
-          }
-      
+        alert("Invalid Credentials");    
+          }      
     )
 } else {
   console.log("Fields are Empty");

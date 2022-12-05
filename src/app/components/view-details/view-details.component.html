@@ -1,0 +1,78 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/image2.png" alt="">
+    <mat-card-content>
+    
+      <h2>Details of a HCO User {{this.hcoUser.hcoId}}</h2>
+        <tr>
+        <td><Strong>HCO ID :</Strong></td>
+         <td>{{this.hcoUser.hcoId}}</td>
+       </tr>
+       <tr>
+        <td><Strong>User ID :</Strong></td>
+        <td>{{this.hcoUser.userId}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Title :</Strong></td>
+        <td>{{this.hcoUser.organizationName}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Author :</Strong></td>
+        <td>{{this.hcoUser.address}}</td>
+       </tr>
+        <tr>
+        <td><Strong>Publisher :</Strong></td>
+        <td>{{this.hcoUser.country}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Price :</Strong></td>
+        <td>{{this.hcoUser.state}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Published Date :</Strong></td>
+        <td>{{this.hcoUser.city}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Category :</Strong></td>
+        <td>{{this.hcoUser.zipcode}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Rating :</Strong></td>
+        <td>{{this.hcoUser.email}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Active :</Strong></td>
+        <td>{{this.hcoUser.website}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Primary Contact :</Strong></td>
+        <td>{{this.hcoUser.primaryContact}}</td>
+       </tr>
+       <tr>
+       <td><Strong>Primary Contact Mobile:</Strong></td>
+        <td>{{this.hcoUser.primaryContactMobile}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Secondary Contact :</Strong></td>
+        <td>{{this.hcoUser.secondaryContact}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Secondary Contact Mobile :</Strong></td>
+        <td>{{this.hcoUser.secondaryContactMobile}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Programs :</Strong></td>
+        <td>{{this.hcoUser.programs}}</td>
+       </tr>
+       <tr>
+        <td><Strong>Status :</Strong></td>
+        <td>{{this.hcoUser.status}}</td>
+       </tr>
+       <tr>
+      <button mat-raised-button color="primary" (click)="approve(this.hcoUser.hcoId)">Approve</button>
+      <button mat-raised-button color="warn" (click)="reject(this.hcoUser.hcoId)">Reject</button>
+      </tr>
+    </mat-card-content>
+  </mat-card>
