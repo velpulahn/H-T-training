@@ -62,7 +62,7 @@ public class HCOUserController {
 		 return service.getHcoUserById(hcoId);
 		 }
 	 
-	 @GetMapping("/ae/{userId}/allhcouserdetails")
+	 @GetMapping("/accountexecutive/{userId}/allhcouserdetails")
 		public List<HCOUser> getAllHcoUserDetails(@PathVariable int userId) throws UserException{
 		 return service.getAllHcoUserDetails(userId);
 	 }

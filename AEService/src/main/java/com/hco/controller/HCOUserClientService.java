@@ -11,7 +11,7 @@ import com.hco.model.HCOUser;
 @FeignClient(name = "hco-user-service")
 public interface HCOUserClientService {
 
-	@GetMapping("/api/v1/healthcare/ae/{userId}/allhcouserdetails")
+	@GetMapping("/api/v1/healthcare/accountexecutive/{userId}/allhcouserdetails")
 	public List<HCOUser> getAllHcoUserDetails(@PathVariable int userId);
 
 }

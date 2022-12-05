@@ -14,7 +14,7 @@ import com.hco.model.HCOUser;
 
 @CrossOrigin(origins="*")
 @RestController
-@RequestMapping("/api/v1/healthcare/ae")
+@RequestMapping("/api/v1/healthcare/accountexecutive")
 public class AEController {
 
 	@Autowired 
