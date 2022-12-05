@@ -1,6 +1,7 @@
 package com.hco.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,13 +10,17 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hco.entity.Response;
 import com.hco.entity.Users;
 import com.hco.exception.UserException;
 import com.hco.models.JwtRequest;
@@ -24,6 +29,7 @@ import com.hco.repo.UsersRepository;
 import com.hco.service.UsersService;
 import com.hco.utils.JwtTokenUtil;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/healthcare/users")
 public class UsersController {
@@ -42,10 +48,19 @@ public class UsersController {
 	
 	@PostMapping()
 	public Users saveUser(@RequestBody Users user) {
+		Random r = new Random();
+        int i = Math.abs(r.nextInt());
+		user.setUserId(i*104628648);
 		return service.saveUser(user);
 	}
 
-	@GetMapping("/{userId}")
+	@GetMapping("/userrole/{userName}")
+	public Response getRoleByUserName(@PathVariable String userName){
+		return service.getRoleByUserName(userName);
+	}
+	
+	
+	@GetMapping("/user/{userId}")
 	public Users getUserById(@PathVariable int userId) throws UserException {
 		return service.getUserById(userId);
 	}

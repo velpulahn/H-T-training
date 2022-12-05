@@ -1,5 +1,0 @@
-package com.hco.controller;
-
-public class UserFeignClientService {
-
-}

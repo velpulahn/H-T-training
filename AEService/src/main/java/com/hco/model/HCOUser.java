@@ -26,6 +26,7 @@ public class HCOUser {
 	    private String secondaryContact;
 	    private String secondaryContactMobile;
 	    private String programs;
+	    private String status;
 	    
 		public HCOUser() {
 			super();
@@ -34,7 +35,7 @@ public class HCOUser {
 		
 		public HCOUser(int hcoId, int userId, String organizationName, String address, String country, String state, String city,
 				String zipcode, String email, String website, String primaryContact, String primaryContactMobile,
-				String secondaryContact, String secondaryContactMobile, String programs) {
+				String secondaryContact, String secondaryContactMobile, String programs, String status) {
 			super();
 			this.hcoId = hcoId;
 			this.userId = userId;
@@ -51,6 +52,7 @@ public class HCOUser {
 			this.secondaryContact = secondaryContact;
 			this.secondaryContactMobile = secondaryContactMobile;
 			this.programs = programs;
+			this.status = status;
 		}
 		
 		public int getHcoId() {
@@ -144,13 +146,21 @@ public class HCOUser {
 			this.programs = programs;
 		}
 		
+		public String getStatus() {
+			return status;
+		}
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		@Override
 		public String toString() {
-			return "HCOUser [hcoId=" + hcoId + ", userId=" + userId + ", organizationName=" + organizationName + ", address=" + address
-					+ ", country=" + country + ", state=" + state + ", city=" + city + ", zipcode=" + zipcode
-					+ ", email=" + email + ", website=" + website + ", primaryContact=" + primaryContact
-					+ ", primaryContactMobile=" + primaryContactMobile + ", secondaryContact=" + secondaryContact
-					+ ", secondaryContactMobile=" + secondaryContactMobile + ", programs=" + programs + "]";
+			return "HCOUser [hcoId=" + hcoId + ", userId=" + userId + ", organizationName=" + organizationName
+					+ ", address=" + address + ", country=" + country + ", state=" + state + ", city=" + city
+					+ ", zipcode=" + zipcode + ", email=" + email + ", website=" + website + ", primaryContact="
+					+ primaryContact + ", primaryContactMobile=" + primaryContactMobile + ", secondaryContact="
+					+ secondaryContact + ", secondaryContactMobile=" + secondaryContactMobile + ", programs=" + programs
+					+ ", status=" + status + "]";
 		}
 	    
 	    

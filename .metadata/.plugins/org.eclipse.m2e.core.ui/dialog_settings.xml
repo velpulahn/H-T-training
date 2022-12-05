@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\cogjava3244\eclipseWorkspace\HealthCareOrganization\ApiGateway"/>
+			<item value="C:\Users\cogjava3244\eclipseWorkspace\HealthCareOrganization\EurekaServer"/>
 			<item value="C:\Users\cogjava3244\eclipseWorkspace\Digital-Book-Application-usecase\ApiGateway"/>
 			<item value="C:\Users\cogjava3244\eclipseWorkspace\Digital-Book-Application-usecase\EurekaServer"/>
 			<item value="C:\Users\cogjava3244\eclipseWorkspace\HealthCareOrganization\AEService"/>
